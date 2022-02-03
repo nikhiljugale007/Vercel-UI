@@ -1,0 +1,54 @@
+.star-rating {
+	display: flex;
+	flex-direction: row-reverse;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	padding: 1rem;
+}
+.star-rating input {
+	display: none;
+}
+.star-rating label {
+	float: right;
+	font-size: 2rem;
+	color: lightgrey;
+	margin: 0 5px;
+	text-shadow: 1px 1px #bbb;
+}
+.star-rating label:before {
+	font-family: FontAwesome;
+	content: "\f005";
+	display: inline-block;
+	padding-right: 3px;
+	vertical-align: middle;
+}
+.star-rating input:checked ~ label {
+	color: gold;
+	text-shadow: 1px 1px #c60;
+}
+.star-rating:not(:checked) > label:hover,
+.star-rating:not(:checked) > label:hover ~ label {
+	color: gold;
+	cursor: pointer;
+}
+.star-rating input:checked > label:hover,
+.star-rating input:checked > label:hover ~ label {
+	color: gold;
+	text-shadow: 1px 1px goldenrod;
+}
+
+.star-rating-view {
+	display: flex;
+	gap: 4px;
+	background-color: var(--hover-color);
+	padding: 1rem;
+	border-radius: 5px;
+	font-size: 1.2rem;
+}
+.rating-icon {
+	color: gold;
+}
+.rating-text {
+	font-weight: 500;
+}
