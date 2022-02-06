@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Badge | Docs</title>
+		<link rel="stylesheet" href="./all-comp.css" />
+		<link
+			href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
+			rel="stylesheet"
+		/>
+		<script>
+			var themeDefault = window.localStorage.getItem("data-theme");
+			if (themeDefault)
+				document.documentElement.setAttribute("data-theme", themeDefault);
+			console.log(themeDefault);
+			function changeTheme() {
+				let theme = localStorage.getItem("data-theme"); // Retrieve saved them from local storage
+				if (theme === "dark") {
+					changeThemeToLight();
+				} else {
+					changeThemeToDark();
+				}
+			}
+
+			let theme = localStorage.getItem("data-theme");
+			const changeThemeToDark = () => {
+				document.documentElement.setAttribute("data-theme", "dark"); // set theme to dark
+				localStorage.setItem("data-theme", "dark"); // save theme to local storage
+			};
+
+			const changeThemeToLight = () => {
+				document.documentElement.setAttribute("data-theme", "light"); // set theme light
+				localStorage.setItem("data-theme", "light"); // save theme to local storage
+			};
+
+			function openMobileSidebar() {
+				var mobileBar = document.getElementById("mobile-sidebar");
+				mobileBar.style.display = "block";
+			}
+			function closeMobileSidebar() {
+				var mobileBar = document.getElementById("mobile-sidebar");
+				mobileBar.style.display = "none";
+			}
+		</script>
+	</head>
+	<body>
+		<main class="main-container">
+			<header class="header">
+				<div class="flex-hz">
+					<button class="btn btn-icon btn-menu" onclick="openMobileSidebar()">
+						<i class="fa fa-bars fa-lg" aria-hidden="true"></i>
+					</button>
+					<a class="flex-hz link-no-style" href="../index.html">
+						<div class="logo-container">
+							<img class="img-round" src="./logo.png" />
+						</div>
+						<div class="brand-name typo-label">Vercel-UI</div>
+					</a>
+				</div>
+				<div class="flex-hz">
+					<a
+						class="btn btn-icon"
+						href="https://github.com/nikhiljugale007/Vercel-UI"
+						target="_blank"
+					>
+						<i class="fa fa-github fa-2x" aria-hidden="true"></i>
+					</a>
+
+					<button class="btn btn-icon" onclick="changeTheme()">
+						<i class="fa fa-adjust fa-2x" aria-hidden="true"></i>
+					</button>
+				</div>
+			</header>
+			<div class="sidebar">
+				<div class="drawer">
+					<div class="drawer-header">
+						<h4 class="typo-label">Getting Started</h4>
+					</div>
+					<div class="drawer-body">
+						<a class="drawer-item link-no-style" href="./installation.html">
+							<p>Installation</p>
+						</a>
+					</div>
+					<div class="drawer-header">
+						<h4 class="typo-label">Components</h4>
+					</div>
+					<div class="drawer-body">
+						<a class="drawer-item link-no-style" href="./avatar.html">
+							<p>Avatar</p>
+						</a>
+						<a class="drawer-item link-no-style" href="./alert.html">
+							<p>Alert</p>
+						</a>
+						<a class="drawer-item link-no-style" href="./badge.html">
+							<p>Badge</p>
+						</a>
+						<a class="drawer-item link-no-style" href="./button.html">
+							<p>Button</p>
+						</a>
+						<a class="drawer-item link-no-style" href="./cards.html">
+							<p>Card</p>
+						</a>
+						<a class="drawer-item link-no-style" href="./images.html">
+							<p>Image</p>
+						</a>
+						<a class="drawer-item link-no-style" href="./input.html">
+							<p>Input</p>
+						</a>
+						<a class="drawer-item link-no-style" href="./typography.html">
+							<p>Typography</p>
+						</a>
+						<a class="drawer-item link-no-style" href="./modal.html">
+							<p>Modal</p>
+						</a>
+						<a class="drawer-item link-no-style" href="./list.html">
+							<p>List</p>
+						</a>
+						<a class="drawer-item link-no-style" href="./rating.html">
+							<p>Rating</p>
+						</a>
+						<a class="drawer-item link-no-style" href="./snackbar.html">
+							<p>Snackbar</p>
+						</a>
+						<a class="drawer-item link-no-style" href="./grid.html">
+							<p>Grid</p>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="mobile-sidebar" id="mobile-sidebar">
+				<div class="drawer">
+					<div class="drawer-header">
+						<h4 class="typo-label">Getting Started</h4>
+						<button class="btn btn-icon" onclick="closeMobileSidebar()">
+							<i class="fa fa-times fa-lg" aria-hidden="true"></i>
+						</button>
+					</div>
+					<div class="drawer-body">
+						<a class="drawer-item link-no-style" href="./installation.html">
+							<p>Installation</p>
+						</a>
+					</div>
+					<div class="drawer-header">
+						<h4 class="typo-label">Components</h4>
+					</div>
+					<div class="drawer-body">
+						<a class="drawer-item link-no-style" href="./avatar.html">
+							<p>Avatar</p>
+						</a>
+						<a class="drawer-item link-no-style" href="./alert.html">
+							<p>Alert</p>
+						</a>
+						<a class="drawer-item link-no-style" href="./badge.html">
+							<p>Badge</p>
+						</a>
+						<a class="drawer-item link-no-style" href="./button.html">
+							<p>Button</p>
+						</a>
+						<a class="drawer-item link-no-style" href="./cards.html">
+							<p>Card</p>
+						</a>
+						<a class="drawer-item link-no-style" href="./images.html">
+							<p>Image</p>
+						</a>
+						<a class="drawer-item link-no-style" href="./input.html">
+							<p>Input</p>
+						</a>
+						<a class="drawer-item link-no-style" href="./typography.html">
+							<p>Typography</p>
+						</a>
+						<a class="drawer-item link-no-style" href="./modal.html">
+							<p>Modal</p>
+						</a>
+						<a class="drawer-item link-no-style" href="./list.html">
+							<p>List</p>
+						</a>
+						<a class="drawer-item link-no-style" href="./rating.html">
+							<p>Rating</p>
+						</a>
+						<a class="drawer-item link-no-style" href="./snackbar.html">
+							<p>Snackbar</p>
+						</a>
+						<a class="drawer-item link-no-style" href="./grid.html">
+							<p>Grid</p>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="main-content">
+				<!-- componen-1 -->
+				<div class="component-container">
+					<div class="component-intro">
+						<div class="title">Badge</div>
+						<div class="sub-title">
+							Badges are being used to display a notification count or status
+							information
+						</div>
+					</div>
+					<div class="component-example">
+						<div class="title">Text of Badge</div>
+						<div class="sub-title">
+							We have multiple sizes of text-badges for using these you can use
+							text-badge-large, text-badge-medium-large, text-badge-medium,
+							text-badge-small, text-badge-medium-very-small classes.
+						</div>
+
+						<div
+							class="component-display-container continer-vertical"
+							style="gap: 2rem"
+						>
+							<div class="h1">
+								Text with Badge
+								<span class="text-badge">New</span>
+							</div>
+							<div class="h3">
+								Text with Badge
+								<span class="text-badge">New</span>
+							</div>
+							<div class="h5">
+								Text with Badge
+								<span class="text-badge">New</span>
+							</div>
+							<div class="h6">
+								Text with Badge
+								<span class="text-badge">New</span>
+							</div>
+						</div>
+						<div class="code-snippet-display">
+							<code>
+								<iframe
+									src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=solarized+dark&wt=none&l=auto&width=680&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=%253Cdiv%2520class%253D%2522h1%2522%253E%250A%2520%2520%2520%2520Text%2520with%2520Badge%250A%2520%2520%2520%2520%253Cspan%2520class%253D%2522text-badge%2522%253ENew%253C%252Fspan%253E%250A%253C%252Fdiv%253E%250A%253Cdiv%2520class%253D%2522h3%2522%253E%250A%2520%2520%2520%2520Text%2520with%2520Badge%250A%2520%2520%2520%2520%253Cspan%2520class%253D%2522text-badge%2522%253ENew%253C%252Fspan%253E%250A%253C%252Fdiv%253E%250A%253Cdiv%2520class%253D%2522h5%2522%253E%250A%2520%2520%2520%2520Text%2520with%2520Badge%250A%2520%2520%2520%2520%253Cspan%2520class%253D%2522text-badge%2522%253ENew%253C%252Fspan%253E%250A%253C%252Fdiv%253E%250A%253Cdiv%2520class%253D%2522h6%2522%253E%250A%2520%2520%2520%2520Text%2520with%2520Badge%250A%2520%2520%2520%2520%253Cspan%2520class%253D%2522text-badge%2522%253ENew%253C%252Fspan%253E%250A%253C%252Fdiv%253E"
+									sandbox="allow-scripts allow-same-origin"
+								>
+								</iframe>
+							</code>
+						</div>
+					</div>
+
+					<!-- icon-badge -->
+					<div class="component-example">
+						<div class="title">Button of Badge</div>
+						<div class="sub-title">
+							Button badges can be used with normal buttons as well with icon
+							buttons. Button can be positinoed on left of button as well as
+							right of the button.
+						</div>
+
+						<div class="component-display-container">
+							<button class="btn btn-outlined badge-container">
+								<span class="badge-content btn-badge-left">1</span>
+								Badge Left
+							</button>
+							<button class="btn btn-outlined badge-container">
+								<span class="badge-content btn-badge-right" id="badge">12</span>
+								Badge Right
+							</button>
+							<i class="fa fa-home fa-3x badge-container" aria-hidden="true">
+								<span class="badge-content icon-badge">18</span>
+							</i>
+						</div>
+						<div class="code-snippet-display">
+							<code>
+								<iframe
+									src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=solarized+dark&wt=none&l=auto&width=680&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=%253Cbutton%2520class%253D%2522btn%2520btn-outlined%2520badge-container%2522%253E%250A%2520%2520%2520%2520%253Cspan%2520class%253D%2522badge-content%2520btn-badge-left%2522%253E1%253C%252Fspan%253E%250A%2520%2520%2520%2520Badge-left%250A%253C%252Fbutton%253E%250A%250A%253Cbutton%250A%2520%2520%2520%2520class%253D%2522btn%2520btn-outlined%2520badge-container%2522%250A%253E%250A%2520%2520%2520%2520%253Cspan%2520class%253D%2522badge-content%2520btn-badge-right%2522%2520id%253D%2522badge%2522%253E12%253C%252Fspan%253E%250A%2520%2520%2520%2520Badge-right%250A%253C%252Fbutton%253E%250A%250A%250A%253Ci%2520class%253D%2522fa%2520fa-home%2520fa-3x%2520badge-container%2522%2520aria-hidden%253D%2522true%2522%253E%250A%2520%2520%2520%2520%253Cspan%2520class%253D%2522badge-content%2520icon-badge%2522%253E18%253C%252Fspan%253E%250A%253C%252Fi%253E"
+									sandbox="allow-scripts allow-same-origin"
+								>
+								</iframe>
+							</code>
+						</div>
+					</div>
+					<!-- status badge -->
+					<div class="component-example">
+						<div class="title">Status of Badge</div>
+						<div class="sub-title">
+							Status Badge are available in 3 types - online status badge,
+							offline status badge, do not disturb badge and 3 sizes (large,
+							medium, small) to suit for different size of avatars.
+						</div>
+
+						<div class="component-display-container">
+							<div class="avatar avatar-lg badge-container">
+								<img
+									class="img-round"
+									loading="lazy"
+									src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+								/>
+								<span class="badge-status status-badge-lg status-online"></span>
+							</div>
+
+							<div class="avatar avatar-md badge-container">
+								<img
+									class="img-round"
+									loading="lazy"
+									src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+								/>
+								<span
+									class="badge-status status-badge-md status-offline"
+								></span>
+							</div>
+
+							<div class="avatar avatar-sm badge-container">
+								<img
+									class="img-round"
+									loading="lazy"
+									src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+								/>
+								<span class="badge-status status-badge-sm status-dnd"></span>
+							</div>
+						</div>
+						<div class="code-snippet-display">
+							<code>
+								<iframe
+									src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=solarized+dark&wt=none&l=auto&width=680&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=%253Cdiv%2520class%253D%2522avatar%2520avatar-lg%2520badge-container%2522%253E%250A%2520%2520%2520%2520%253Cimg%250A%2520%2520%2520%2520%2520%2520%2520%2520class%253D%2522image%2520image-round%2522%250A%2520%2520%2520%2520%2520%2520%2520%2520loading%253D%2522lazy%2522%250A%2520%2520%2520%2520%2520%2520%2520%2520src%253D%2522...%2522%250A%2520%2520%2520%2520%252F%253E%250A%2520%2520%2520%2520%253Cspan%250A%2520%2520%2520%2520%2520%2520%2520%2520class%253D%2522badge-status%2520status-badge-lg%2520status-online%2522%250A%2520%2520%2520%2520%253E%253C%252Fspan%253E%250A%253C%252Fdiv%253E%250A%253Cdiv%2520class%253D%2522avatar%2520avatar-md%2520badge-container%2522%253E%250A%2520%2520%2520%2520%253Cimg%250A%2520%2520%2520%2520%2520%2520%2520%2520class%253D%2522image%2520image-round%2522%250A%2520%2520%2520%2520%2520%2520%2520%2520loading%253D%2522lazy%2522%250A%2520%2520%2520%2520%2520%2520%2520%2520src%253D%2522...%2522%250A%2520%2520%2520%2520%252F%253E%250A%2520%2520%2520%2520%253Cspan%250A%2520%2520%2520%2520%2520%2520%2520%2520class%253D%2522badge-status%2520status-badge-md%2520status-offline%2522%250A%2520%2520%2520%2520%253E%253C%252Fspan%253E%250A%253C%252Fdiv%253E%250A%253Cdiv%2520class%253D%2522avatar%2520avatar-sm%2520badge-container%2522%253E%250A%2520%2520%2520%2520%253Cimg%250A%2520%2520%2520%2520%2520%2520%2520%2520class%253D%2522image%2520image-round%2522%250A%2520%2520%2520%2520%2520%2520%2520%2520loading%253D%2522lazy%2522%250A%2520%2520%2520%2520%2520%2520%2520%2520src%253D%2522...%2522%250A%2520%2520%2520%2520%252F%253E%250A%2520%2520%2520%2520%253Cspan%2520class%253D%2522badge-status%2520status-badge-sm%2520status-dnd%2522%253E%253C%252Fspan%253E%250A%253C%252Fdiv%253E"
+									sandbox="allow-scripts allow-same-origin"
+								>
+								</iframe>
+							</code>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>
