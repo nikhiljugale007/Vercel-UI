@@ -268,11 +268,11 @@ hr {
 }
 @media screen and (max-width: 680px) {
 	iframe {
-		width: 500px;
+		width: calc(100% - 1rem);
 	}
 }
 @media screen and (max-width: 500px) {
 	iframe {
-		width: 400px;
+		width: calc(100% - 0.5rem);
 	}
 }
