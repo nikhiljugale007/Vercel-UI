@@ -12,9 +12,12 @@
 		/>
 		<script>
 			var themeDefault = window.localStorage.getItem("data-theme");
-			if (themeDefault)
+			if (!themeDefault) {
+				localStorage.setItem("data-theme", "dark");
+				document.documentElement.setAttribute("data-theme", "dark");
+			} else {
 				document.documentElement.setAttribute("data-theme", themeDefault);
-			console.log(themeDefault);
+			}
 			function changeTheme() {
 				let theme = localStorage.getItem("data-theme"); // Retrieve saved them from local storage
 				if (theme === "dark") {
@@ -24,7 +27,7 @@
 				}
 			}
 
-			let theme = localStorage.getItem("data-theme");
+			const theme = localStorage.getItem("data-theme");
 			const changeThemeToDark = () => {
 				document.documentElement.setAttribute("data-theme", "dark"); // set theme to dark
 				localStorage.setItem("data-theme", "dark"); // save theme to local storage
@@ -87,7 +90,7 @@
 						<h4 class="typo-label">Components</h4>
 					</div>
 					<div class="drawer-body">
-						<a class="drawer-item link-no-style" href="./avatar.html">
+						<a class="drawer-item link-no-style active" href="./avatar.html">
 							<p>Avatar</p>
 						</a>
 						<a class="drawer-item link-no-style" href="./alert.html">
@@ -125,6 +128,13 @@
 						</a>
 						<a class="drawer-item link-no-style" href="./grid.html">
 							<p>Grid</p>
+						</a>
+						<a class="drawer-item link-no-style" href="./navigation.html">
+							<p>Navigation</p>
+						</a>
+
+						<a class="drawer-item link-no-style" href="./slider.html">
+							<p>slider</p>
 						</a>
 					</div>
 				</div>
@@ -147,7 +157,7 @@
 						<h4 class="typo-label">Components</h4>
 					</div>
 					<div class="drawer-body">
-						<a class="drawer-item link-no-style" href="./avatar.html">
+						<a class="drawer-item link-no-style active" href="./avatar.html">
 							<p>Avatar</p>
 						</a>
 						<a class="drawer-item link-no-style" href="./alert.html">
@@ -185,6 +195,12 @@
 						</a>
 						<a class="drawer-item link-no-style" href="./grid.html">
 							<p>Grid</p>
+						</a>
+						<a class="drawer-item link-no-style" href="./navigation.html">
+							<p>Navigation</p>
+						</a>
+						<a class="drawer-item link-no-style" href="./slider.html">
+							<p>slider</p>
 						</a>
 					</div>
 				</div>

@@ -13,9 +13,12 @@
 		/>
 		<script>
 			var themeDefault = window.localStorage.getItem("data-theme");
-			if (themeDefault)
+			if (!themeDefault) {
+				localStorage.setItem("data-theme", "dark");
+				document.documentElement.setAttribute("data-theme", "dark");
+			} else {
 				document.documentElement.setAttribute("data-theme", themeDefault);
-			console.log(themeDefault);
+			}
 			function changeTheme() {
 				let theme = localStorage.getItem("data-theme"); // Retrieve saved them from local storage
 				if (theme === "dark") {
@@ -25,7 +28,7 @@
 				}
 			}
 
-			let theme = localStorage.getItem("data-theme");
+			const theme = localStorage.getItem("data-theme");
 			const changeThemeToDark = () => {
 				document.documentElement.setAttribute("data-theme", "dark"); // set theme to dark
 				localStorage.setItem("data-theme", "dark"); // save theme to local storage
@@ -80,7 +83,10 @@
 						<h4 class="typo-label">Getting Started</h4>
 					</div>
 					<div class="drawer-body">
-						<a class="drawer-item link-no-style" href="./installation.html">
+						<a
+							class="drawer-item link-no-style active"
+							href="./installation.html"
+						>
 							<p>Installation</p>
 						</a>
 					</div>
@@ -126,6 +132,13 @@
 						</a>
 						<a class="drawer-item link-no-style" href="./grid.html">
 							<p>Grid</p>
+						</a>
+						<a class="drawer-item link-no-style" href="./navigation.html">
+							<p>Navigation</p>
+						</a>
+
+						<a class="drawer-item link-no-style" href="./slider.html">
+							<p>slider</p>
 						</a>
 					</div>
 				</div>
@@ -140,7 +153,10 @@
 						</button>
 					</div>
 					<div class="drawer-body">
-						<a class="drawer-item link-no-style" href="./installation.html">
+						<a
+							class="drawer-item link-no-style active"
+							href="./installation.html"
+						>
 							<p>Installation</p>
 						</a>
 					</div>
@@ -186,6 +202,12 @@
 						</a>
 						<a class="drawer-item link-no-style" href="./grid.html">
 							<p>Grid</p>
+						</a>
+						<a class="drawer-item link-no-style" href="./navigation.html">
+							<p>Navigation</p>
+						</a>
+						<a class="drawer-item link-no-style" href="./slider.html">
+							<p>slider</p>
 						</a>
 					</div>
 				</div>
@@ -207,14 +229,7 @@
 						</div>
 						<div class="code-snippet-display">
 							<iframe
-								src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=solarized+dark&wt=none&l=auto&width=680&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=%2540import%2520url%28%2522https%253A%252F%252Fvercel-ui-preview.netlify.app%252Fcomponent-%2509%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520lib%252Fall-comp.css%2522%29%253B%250A%250A%253Clink%250A%2520%2520rel%253D%2522stylesheet%2522%250A%2520%2520href%253D%2522https%253A%252F%252Fvercel-ui-preview.netlify.app%252Fcomponent-lib%252Fall-comp.css%2522%250A%252F%253E"
-								style="
-									width: 680px;
-									height: 360px;
-									border: 0;
-									transform: scale(1);
-									overflow: hidden;
-								"
+								src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=solarized+dark&wt=none&l=auto&width=680&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=%2540import%2520url%28%2522https%253A%252F%252Fvercelui.netlify.app%252Fcomponent-lib%252Fall-comp.css%2522%29%253B%250A%250A%253Clink%250A%2520%2520rel%253D%2522stylesheet%2522%250A%2520%2520href%253D%2522https%253A%252F%252Fvercelui.netlify.app%252Fcomponent-lib%252Fall-comp.css%2522%250A%252F%253E"
 								sandbox="allow-scripts allow-same-origin"
 							>
 							</iframe>

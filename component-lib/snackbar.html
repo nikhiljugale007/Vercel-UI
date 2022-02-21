@@ -11,10 +11,13 @@
 			rel="stylesheet"
 		/>
 		<script>
-			let themeDefault = window.localStorage.getItem("data-theme");
-			if (themeDefault)
+			var themeDefault = window.localStorage.getItem("data-theme");
+			if (!themeDefault) {
+				localStorage.setItem("data-theme", "dark");
+				document.documentElement.setAttribute("data-theme", "dark");
+			} else {
 				document.documentElement.setAttribute("data-theme", themeDefault);
-			console.log(themeDefault);
+			}
 			function changeTheme() {
 				let theme = localStorage.getItem("data-theme"); // Retrieve saved them from local storage
 				if (theme === "dark") {
@@ -24,7 +27,7 @@
 				}
 			}
 
-			let theme = localStorage.getItem("data-theme");
+			const theme = localStorage.getItem("data-theme");
 			const changeThemeToDark = () => {
 				document.documentElement.setAttribute("data-theme", "dark"); // set theme to dark
 				localStorage.setItem("data-theme", "dark"); // save theme to local storage
@@ -43,11 +46,9 @@
 				var mobileBar = document.getElementById("mobile-sidebar");
 				mobileBar.style.display = "none";
 			}
-
 			function openLeftSnackbar() {
 				var leftSnackbar = document.getElementById("leftsnackbar");
 				leftSnackbar.classList.remove("hide-snackbar");
-
 				setTimeout(() => {
 					leftSnackbar.classList.add("hide-snackbar");
 				}, 3000);
@@ -55,7 +56,6 @@
 			function openRightSnackbar() {
 				var leftSnackbar = document.getElementById("rightsnackbar");
 				leftSnackbar.classList.remove("hide-snackbar");
-
 				setTimeout(() => {
 					leftSnackbar.classList.add("hide-snackbar");
 				}, 3000);
@@ -63,7 +63,6 @@
 			function openCenterSnackbar() {
 				var leftSnackbar = document.getElementById("centersnackbar");
 				leftSnackbar.classList.remove("hide-snackbar");
-
 				setTimeout(() => {
 					leftSnackbar.classList.add("hide-snackbar");
 				}, 3000);
@@ -145,11 +144,18 @@
 						<a class="drawer-item link-no-style" href="./rating.html">
 							<p>Rating</p>
 						</a>
-						<a class="drawer-item link-no-style" href="./snackbar.html">
+						<a class="drawer-item link-no-style active" href="./snackbar.html">
 							<p>Snackbar</p>
 						</a>
 						<a class="drawer-item link-no-style" href="./grid.html">
 							<p>Grid</p>
+						</a>
+						<a class="drawer-item link-no-style" href="./navigation.html">
+							<p>Navigation</p>
+						</a>
+
+						<a class="drawer-item link-no-style" href="./slider.html">
+							<p>slider</p>
 						</a>
 					</div>
 				</div>
@@ -205,11 +211,17 @@
 						<a class="drawer-item link-no-style" href="./rating.html">
 							<p>Rating</p>
 						</a>
-						<a class="drawer-item link-no-style" href="./snackbar.html">
+						<a class="drawer-item link-no-style active" href="./snackbar.html">
 							<p>Snackbar</p>
 						</a>
 						<a class="drawer-item link-no-style" href="./grid.html">
 							<p>Grid</p>
+						</a>
+						<a class="drawer-item link-no-style" href="./navigation.html">
+							<p>Navigation</p>
+						</a>
+						<a class="drawer-item link-no-style" href="./slider.html">
+							<p>slider</p>
 						</a>
 					</div>
 				</div>
@@ -257,7 +269,7 @@
 						<div class="code-snippet-display">
 							<code>
 								<iframe
-									src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=solarized+dark&wt=sharp&l=auto&width=680&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=0px&ph=0px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=%253Cdiv%2520class%253D%2522alert%2520alert-primary%2522%253E%250A%2509%253Cp%253EThis%2520is%2520primary%2520alert.%253C%252Fp%253E%250A%2509%253Ci%2520class%253D%2522fas%2520fa-times%2520fa-lg%2522%253E%253C%252Fi%253E%250A%253C%252Fdiv%253E%250A%253Cdiv%2520class%253D%2522alert%2520alert-secondary%2522%253E%250A%2509%253Cp%253EThis%2520is%2520secondary%2520alert.%253C%252Fp%253E%250A%2509%253Ci%2520class%253D%2522fas%2520fa-times%2520fa-lg%2522%253E%253C%252Fi%253E%250A%253C%252Fdiv%253E%250A%253Cdiv%2520class%253D%2522alert%2520alert-danger%2522%253E%250A%2509%253Cdiv%2520class%253D%2522alert-sub-container%2522%253E%250A%2509%2509%253Ci%2520class%253D%2522fas%2520fa-exclamation-triangle%2522%253E%253C%252Fi%253E%250A%2509%2509%253Cp%253EThis%2520is%2520danger%2520alert.%253C%252Fp%253E%250A%2509%253C%252Fdiv%253E%250A%2509%253Ci%2520class%253D%2522fas%2520fa-times%2520fa-lg%2522%253E%253C%252Fi%253E%250A%253C%252Fdiv%253E%250A%253Cdiv%2520class%253D%2522alert%2520alert-success%2522%253E%250A%2509%253Cdiv%2520class%253D%2522alert-sub-container%2522%253E%250A%2509%2509%253Ci%2520class%253D%2522far%2520fa-check-circle%2520fa-lg%2522%253E%253C%252Fi%253E%250A%2509%2509%253Cp%253EThis%2520is%2520success%2520alert.%253C%252Fp%253E%250A%2509%253C%252Fdiv%253E%250A%2509%253Ci%2520class%253D%2522fas%2520fa-times%2520fa-lg%2522%253E%253C%252Fi%253E%250A%253C%252Fdiv%253E"
+									src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=solarized+dark&wt=none&l=auto&width=680&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=%253Cdiv%2520class%253D%2522snackbar%2520snackbar-primary%2522%253E%250A%2520%2520This%2520is%2520primary%250A%2520%2520%253Cbutton%2520class%253D%2522snackbar-action%2522%253E%250A%2520%2520%2520%2520%2520%2520%253Ci%2520class%253D%2522fa%2520fa-times%2520fa-lg%2522%2520aria-hidden%253D%2522true%2522%253E%253C%252Fi%253E%250A%2520%2520%253C%252Fbutton%253E%250A%253C%252Fdiv%253E%250A%253Cdiv%2520class%253D%2522snackbar%2520snackbar-secondary%2522%253E%250A%2520%2520This%2520is%2520secondary%2520alert%250A%2520%2520%253Cbutton%2520class%253D%2522snackbar-action%2522%253E%250A%2520%2520%2520%2520%2520%2520%253Ci%2520class%253D%2522fa%2520fa-times%2520fa-lg%2522%2520aria-hidden%253D%2522true%2522%253E%253C%252Fi%253E%250A%2520%2520%253C%252Fbutton%253E%250A%253C%252Fdiv%253E%250A%253Cdiv%2520class%253D%2522snackbar%2520snackbar-danger%2522%253E%250A%2520%2520Can%27t%2520send%2520photo%2520.%250A%2520%2520%253Cbutton%2520class%253D%2522snackbar-action%2522%253E%250A%2520%2520%2520%2520%2520%2520%253Ci%2520class%253D%2522fa%2520fa-times%2520fa-lg%2522%2520aria-hidden%253D%2522true%2522%253E%253C%252Fi%253E%250A%2520%2520%253C%252Fbutton%253E%250A%253C%252Fdiv%253E%250A%253Cdiv%2520class%253D%2522snackbar%2520snackbar-success%2522%253E%250A%2520%2520Photo%2520sent%2520successfully%250A%2520%2520%253Cbutton%2520class%253D%2522snackbar-action%2522%253E%250A%2520%2520%2520%2520%2520%2520%253Ci%2520class%253D%2522fa%2520fa-times%2520fa-lg%2522%2520aria-hidden%253D%2522true%2522%253E%253C%252Fi%253E%250A%2520%2520%253C%252Fbutton%253E%250A%253C%252Fdiv%253E"
 									sandbox="allow-scripts allow-same-origin"
 								>
 								</iframe>
@@ -305,7 +317,7 @@
 						<div class="code-snippet-display">
 							<code>
 								<iframe
-									src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=solarized+dark&wt=sharp&l=auto&width=680&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=0px&ph=0px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=%253Cdiv%2520class%253D%2522alert%2520alert-primary%2522%253E%250A%2509%253Cp%253EThis%2520is%2520primary%2520alert.%253C%252Fp%253E%250A%2509%253Ci%2520class%253D%2522fas%2520fa-times%2520fa-lg%2522%253E%253C%252Fi%253E%250A%253C%252Fdiv%253E%250A%253Cdiv%2520class%253D%2522alert%2520alert-secondary%2522%253E%250A%2509%253Cp%253EThis%2520is%2520secondary%2520alert.%253C%252Fp%253E%250A%2509%253Ci%2520class%253D%2522fas%2520fa-times%2520fa-lg%2522%253E%253C%252Fi%253E%250A%253C%252Fdiv%253E%250A%253Cdiv%2520class%253D%2522alert%2520alert-danger%2522%253E%250A%2509%253Cdiv%2520class%253D%2522alert-sub-container%2522%253E%250A%2509%2509%253Ci%2520class%253D%2522fas%2520fa-exclamation-triangle%2522%253E%253C%252Fi%253E%250A%2509%2509%253Cp%253EThis%2520is%2520danger%2520alert.%253C%252Fp%253E%250A%2509%253C%252Fdiv%253E%250A%2509%253Ci%2520class%253D%2522fas%2520fa-times%2520fa-lg%2522%253E%253C%252Fi%253E%250A%253C%252Fdiv%253E%250A%253Cdiv%2520class%253D%2522alert%2520alert-success%2522%253E%250A%2509%253Cdiv%2520class%253D%2522alert-sub-container%2522%253E%250A%2509%2509%253Ci%2520class%253D%2522far%2520fa-check-circle%2520fa-lg%2522%253E%253C%252Fi%253E%250A%2509%2509%253Cp%253EThis%2520is%2520success%2520alert.%253C%252Fp%253E%250A%2509%253C%252Fdiv%253E%250A%2509%253Ci%2520class%253D%2522fas%2520fa-times%2520fa-lg%2522%253E%253C%252Fi%253E%250A%253C%252Fdiv%253E"
+									src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=solarized+dark&wt=none&l=auto&width=680&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=%253Cdiv%2520class%253D%2522snackbar%2520snackbar-primary%2520snackbar-left%2520hide-snackbar%2522%2520id%253D%2522leftsnackbar%2522%250A%253E%250A%2520%2520%2520%2520This%2520is%2520primary%250A%2520%2520%2520%2520%253Cbutton%2520class%253D%2522snackbar-action%2522%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%253Ci%2520class%253D%2522fa%2520fa-times%2520fa-lg%2522%2520aria-hidden%253D%2522true%2522%253E%253C%252Fi%253E%250A%2520%2520%2520%2520%253C%252Fbutton%253E%250A%253C%252Fdiv%253E%250A%253Cdiv%2520class%253D%2522snackbar%2520snackbar-success%2520snackbar-center%2520hide-snackbar%2522%2520id%253D%2522centersnackbar%2522%2520%253E%250A%2520%2520%2520%2520Photo%2520sent%2520successfully%250A%2520%2520%2520%2520%253Cbutton%2520class%253D%2522snackbar-action%2522%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%253Ci%2520class%253D%2522fa%2520fa-times%2520fa-lg%2522%2520aria-hidden%253D%2522true%2522%253E%253C%252Fi%253E%250A%2520%2520%2520%2520%253C%252Fbutton%253E%250A%253C%252Fdiv%253E%250A%253Cdiv%2520class%253D%2522snackbar%2520snackbar-danger%2520snackbar-right%2520hide-snackbar%2522%2520id%253D%2522rightsnackbar%2522%2520%253E%250A%2520%2520%2520%2520Can%27t%2520send%2520photo%2520.%250A%2520%2520%2520%2520%253Cbutton%2520class%253D%2522snackbar-action%2522%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%253Ci%2520class%253D%2522fa%2520fa-times%2520fa-lg%2522%2520aria-hidden%253D%2522true%2522%253E%253C%252Fi%253E%250A%2520%2520%2520%2520%253C%252Fbutton%253E%250A%253C%252Fdiv%253E"
 									sandbox="allow-scripts allow-same-origin"
 								>
 								</iframe>

@@ -10,10 +10,14 @@
 			href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
 			rel="stylesheet"
 		/>
-		<script>
+        <script>
 			var themeDefault = window.localStorage.getItem("data-theme");
-			if (themeDefault)
+			if (!themeDefault) {
+				localStorage.setItem("data-theme", "dark");
+				document.documentElement.setAttribute("data-theme", "dark");
+			} else {
 				document.documentElement.setAttribute("data-theme", themeDefault);
+			}
 			function changeTheme() {
 				let theme = localStorage.getItem("data-theme"); // Retrieve saved them from local storage
 				if (theme === "dark") {
@@ -23,15 +27,15 @@
 				}
 			}
 
-			let theme = localStorage.getItem("data-theme");
+			const theme = localStorage.getItem("data-theme");
 			const changeThemeToDark = () => {
-				document.documentElement.setAttribute("data-theme", "dark"); 
-				localStorage.setItem("data-theme", "dark"); 
+				document.documentElement.setAttribute("data-theme", "dark"); // set theme to dark
+				localStorage.setItem("data-theme", "dark"); // save theme to local storage
 			};
 
 			const changeThemeToLight = () => {
-				document.documentElement.setAttribute("data-theme", "light"); 
-				localStorage.setItem("data-theme", "light"); 
+				document.documentElement.setAttribute("data-theme", "light"); // set theme light
+				localStorage.setItem("data-theme", "light"); // save theme to local storage
 			};
 
 			function openMobileSidebar() {
@@ -107,7 +111,7 @@
 						<a class="drawer-item link-no-style" href="./input.html">
 							<p>Input</p>
 						</a>
-						<a class="drawer-item link-no-style" href="./typography.html">
+						<a class="drawer-item link-no-style active" href="./typography.html">
 							<p>Typography</p>
 						</a>
 						<a class="drawer-item link-no-style" href="./modal.html">
@@ -124,6 +128,13 @@
 						</a>
 						<a class="drawer-item link-no-style" href="./grid.html">
 							<p>Grid</p>
+						</a>
+						<a class="drawer-item link-no-style" href="./navigation.html">
+							<p>Navigation</p>
+						</a>
+
+						<a class="drawer-item link-no-style" href="./slider.html">
+							<p>slider</p>
 						</a>
 					</div>
 				</div>
@@ -167,7 +178,7 @@
 						<a class="drawer-item link-no-style" href="./input.html">
 							<p>Input</p>
 						</a>
-						<a class="drawer-item link-no-style" href="./typography.html">
+						<a class="drawer-item link-no-style active" href="./typography.html">
 							<p>Typography</p>
 						</a>
 						<a class="drawer-item link-no-style" href="./modal.html">
@@ -184,6 +195,12 @@
 						</a>
 						<a class="drawer-item link-no-style" href="./grid.html">
 							<p>Grid</p>
+						</a>
+						<a class="drawer-item link-no-style" href="./navigation.html">
+							<p>Navigation</p>
+						</a>
+						<a class="drawer-item link-no-style" href="./slider.html">
+							<p>slider</p>
 						</a>
 					</div>
 				</div>

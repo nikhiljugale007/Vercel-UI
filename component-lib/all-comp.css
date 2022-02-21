@@ -245,6 +245,9 @@ hr {
 	text-decoration: none;
 }
 
+.active {
+	background-color: var(--hover-color);
+}
 @media screen and (max-width: 900px) {
 	.btn-menu {
 		display: block;
