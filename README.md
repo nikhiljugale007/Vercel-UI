@@ -5,6 +5,7 @@ VercelUI provides a library of components, enabling you to build your design sys
 
 ---
 
+## Documentation Site: [https://vercelui.netlify.app/](https://vercelui.netlify.app/)
 
 ### Preview
 ![VercelUI-demo1](https://user-images.githubusercontent.com/52400252/154827712-6c63309d-9b5a-4bb9-8f1e-8d75b8d82028.gif)
@@ -31,10 +32,11 @@ For linking in CSS use
 ---
 
 ### Features
-  All the components are fully responsive
-  
-  Import the full library or just import the components you need.
-  
+  - All the components are fully responsive. 
+  - All the components support dark mode. 
+  - You can also combine the classes and use them for different purposes.
+
+### Components
 - Avatar
   - Image avatars
   - Text avatars
