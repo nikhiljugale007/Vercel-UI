@@ -11,10 +11,13 @@
 			rel="stylesheet"
 		/>
 		<script>
-			let themeDefault = window.localStorage.getItem("data-theme");
-			if (themeDefault)
+			var themeDefault = window.localStorage.getItem("data-theme");
+			if (!themeDefault) {
+				localStorage.setItem("data-theme", "dark");
+				document.documentElement.setAttribute("data-theme", "dark");
+			} else {
 				document.documentElement.setAttribute("data-theme", themeDefault);
-			console.log(themeDefault);
+			}
 			function changeTheme() {
 				let theme = localStorage.getItem("data-theme"); // Retrieve saved them from local storage
 				if (theme === "dark") {
@@ -24,7 +27,7 @@
 				}
 			}
 
-			let theme = localStorage.getItem("data-theme");
+			const theme = localStorage.getItem("data-theme");
 			const changeThemeToDark = () => {
 				document.documentElement.setAttribute("data-theme", "dark"); // set theme to dark
 				localStorage.setItem("data-theme", "dark"); // save theme to local storage
@@ -43,11 +46,9 @@
 				var mobileBar = document.getElementById("mobile-sidebar");
 				mobileBar.style.display = "none";
 			}
-
 			function openLeftSnackbar() {
 				var leftSnackbar = document.getElementById("leftsnackbar");
 				leftSnackbar.classList.remove("hide-snackbar");
-
 				setTimeout(() => {
 					leftSnackbar.classList.add("hide-snackbar");
 				}, 3000);
@@ -55,7 +56,6 @@
 			function openRightSnackbar() {
 				var leftSnackbar = document.getElementById("rightsnackbar");
 				leftSnackbar.classList.remove("hide-snackbar");
-
 				setTimeout(() => {
 					leftSnackbar.classList.add("hide-snackbar");
 				}, 3000);
@@ -63,7 +63,6 @@
 			function openCenterSnackbar() {
 				var leftSnackbar = document.getElementById("centersnackbar");
 				leftSnackbar.classList.remove("hide-snackbar");
-
 				setTimeout(() => {
 					leftSnackbar.classList.add("hide-snackbar");
 				}, 3000);
@@ -145,11 +144,18 @@
 						<a class="drawer-item link-no-style" href="./rating.html">
 							<p>Rating</p>
 						</a>
-						<a class="drawer-item link-no-style" href="./snackbar.html">
+						<a class="drawer-item link-no-style active" href="./snackbar.html">
 							<p>Snackbar</p>
 						</a>
 						<a class="drawer-item link-no-style" href="./grid.html">
 							<p>Grid</p>
+						</a>
+						<a class="drawer-item link-no-style" href="./navigation.html">
+							<p>Navigation</p>
+						</a>
+
+						<a class="drawer-item link-no-style" href="./slider.html">
+							<p>slider</p>
 						</a>
 					</div>
 				</div>
@@ -205,11 +211,17 @@
 						<a class="drawer-item link-no-style" href="./rating.html">
 							<p>Rating</p>
 						</a>
-						<a class="drawer-item link-no-style" href="./snackbar.html">
+						<a class="drawer-item link-no-style active" href="./snackbar.html">
 							<p>Snackbar</p>
 						</a>
 						<a class="drawer-item link-no-style" href="./grid.html">
 							<p>Grid</p>
+						</a>
+						<a class="drawer-item link-no-style" href="./navigation.html">
+							<p>Navigation</p>
+						</a>
+						<a class="drawer-item link-no-style" href="./slider.html">
+							<p>slider</p>
 						</a>
 					</div>
 				</div>
