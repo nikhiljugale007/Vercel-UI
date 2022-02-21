@@ -12,9 +12,12 @@
 		/>
 		<script>
 			var themeDefault = window.localStorage.getItem("data-theme");
-			if (themeDefault)
+			if (!themeDefault) {
+				localStorage.setItem("data-theme", "dark");
+				document.documentElement.setAttribute("data-theme", "dark");
+			} else {
 				document.documentElement.setAttribute("data-theme", themeDefault);
-			console.log(themeDefault);
+			}
 			function changeTheme() {
 				let theme = localStorage.getItem("data-theme"); // Retrieve saved them from local storage
 				if (theme === "dark") {
@@ -24,7 +27,7 @@
 				}
 			}
 
-			let theme = localStorage.getItem("data-theme");
+			const theme = localStorage.getItem("data-theme");
 			const changeThemeToDark = () => {
 				document.documentElement.setAttribute("data-theme", "dark"); // set theme to dark
 				localStorage.setItem("data-theme", "dark"); // save theme to local storage
@@ -54,7 +57,7 @@
 					</button>
 					<a class="flex-hz link-no-style" href="../index.html">
 						<div class="logo-container">
-							<img class="img-round" src="./logo.png" alt="logo" />
+							<img class="img-round" src="./logo.png" />
 						</div>
 						<div class="brand-name typo-label">Vercel-UI</div>
 					</a>
@@ -126,6 +129,13 @@
 						<a class="drawer-item link-no-style" href="./grid.html">
 							<p>Grid</p>
 						</a>
+						<a class="drawer-item link-no-style" href="./navigation.html">
+							<p>Navigation</p>
+						</a>
+
+						<a class="drawer-item link-no-style active" href="./slider.html">
+							<p>slider</p>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -185,6 +195,12 @@
 						</a>
 						<a class="drawer-item link-no-style" href="./grid.html">
 							<p>Grid</p>
+						</a>
+						<a class="drawer-item link-no-style" href="./navigation.html">
+							<p>Navigation</p>
+						</a>
+						<a class="drawer-item link-no-style active" href="./slider.html">
+							<p>slider</p>
 						</a>
 					</div>
 				</div>
