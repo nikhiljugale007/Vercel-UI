@@ -1,331 +1,320 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Snackbar | Docs</title>
-		<link rel="stylesheet" href="./all-comp.css" />
-		<link
-			href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
-			rel="stylesheet"
-		/>
-		<script>
-			var themeDefault = window.localStorage.getItem("data-theme");
-			if (!themeDefault) {
-				localStorage.setItem("data-theme", "dark");
-				document.documentElement.setAttribute("data-theme", "dark");
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Snackbar | Docs</title>
+	<link rel="stylesheet" href="./all-comp.css" />
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+	<script>
+		var themeDefault = window.localStorage.getItem("data-theme");
+		if (!themeDefault) {
+			localStorage.setItem("data-theme", "dark");
+			document.documentElement.setAttribute("data-theme", "dark");
+		} else {
+			document.documentElement.setAttribute("data-theme", themeDefault);
+		}
+		function changeTheme() {
+			let theme = localStorage.getItem("data-theme"); // Retrieve saved them from local storage
+			if (theme === "dark") {
+				changeThemeToLight();
 			} else {
-				document.documentElement.setAttribute("data-theme", themeDefault);
+				changeThemeToDark();
 			}
-			function changeTheme() {
-				let theme = localStorage.getItem("data-theme"); // Retrieve saved them from local storage
-				if (theme === "dark") {
-					changeThemeToLight();
-				} else {
-					changeThemeToDark();
-				}
-			}
+		}
 
-			const theme = localStorage.getItem("data-theme");
-			const changeThemeToDark = () => {
-				document.documentElement.setAttribute("data-theme", "dark"); // set theme to dark
-				localStorage.setItem("data-theme", "dark"); // save theme to local storage
-			};
+		const theme = localStorage.getItem("data-theme");
+		const changeThemeToDark = () => {
+			document.documentElement.setAttribute("data-theme", "dark"); // set theme to dark
+			localStorage.setItem("data-theme", "dark"); // save theme to local storage
+		};
 
-			const changeThemeToLight = () => {
-				document.documentElement.setAttribute("data-theme", "light"); // set theme light
-				localStorage.setItem("data-theme", "light"); // save theme to local storage
-			};
+		const changeThemeToLight = () => {
+			document.documentElement.setAttribute("data-theme", "light"); // set theme light
+			localStorage.setItem("data-theme", "light"); // save theme to local storage
+		};
 
-			function openMobileSidebar() {
-				var mobileBar = document.getElementById("mobile-sidebar");
-				mobileBar.style.display = "block";
-			}
-			function closeMobileSidebar() {
-				var mobileBar = document.getElementById("mobile-sidebar");
-				mobileBar.style.display = "none";
-			}
-			function openLeftSnackbar() {
-				var leftSnackbar = document.getElementById("leftsnackbar");
-				leftSnackbar.classList.remove("hide-snackbar");
-				setTimeout(() => {
-					leftSnackbar.classList.add("hide-snackbar");
-				}, 3000);
-			}
-			function openRightSnackbar() {
-				var leftSnackbar = document.getElementById("rightsnackbar");
-				leftSnackbar.classList.remove("hide-snackbar");
-				setTimeout(() => {
-					leftSnackbar.classList.add("hide-snackbar");
-				}, 3000);
-			}
-			function openCenterSnackbar() {
-				var leftSnackbar = document.getElementById("centersnackbar");
-				leftSnackbar.classList.remove("hide-snackbar");
-				setTimeout(() => {
-					leftSnackbar.classList.add("hide-snackbar");
-				}, 3000);
-			}
-		</script>
-	</head>
-	<body>
-		<main class="main-container">
-			<header class="header">
-				<div class="flex-hz">
-					<button class="btn btn-icon btn-menu" onclick="openMobileSidebar()">
-						<i class="fa fa-bars fa-lg" aria-hidden="true"></i>
-					</button>
-					<a class="flex-hz link-no-style" href="../index.html">
-						<div class="logo-container">
-							<img class="img-round" src="./logo.png" />
-						</div>
-						<div class="brand-name typo-label">Vercel-UI</div>
+		function openMobileSidebar() {
+			var mobileBar = document.getElementById("mobile-sidebar");
+			mobileBar.style.display = "block";
+		}
+		function closeMobileSidebar() {
+			var mobileBar = document.getElementById("mobile-sidebar");
+			mobileBar.style.display = "none";
+		}
+		function openLeftSnackbar() {
+			var leftSnackbar = document.getElementById("leftsnackbar");
+			leftSnackbar.classList.remove("hide-snackbar");
+			setTimeout(() => {
+				leftSnackbar.classList.add("hide-snackbar");
+			}, 3000);
+		}
+		function openRightSnackbar() {
+			var leftSnackbar = document.getElementById("rightsnackbar");
+			leftSnackbar.classList.remove("hide-snackbar");
+			setTimeout(() => {
+				leftSnackbar.classList.add("hide-snackbar");
+			}, 3000);
+		}
+		function openCenterSnackbar() {
+			var leftSnackbar = document.getElementById("centersnackbar");
+			leftSnackbar.classList.remove("hide-snackbar");
+			setTimeout(() => {
+				leftSnackbar.classList.add("hide-snackbar");
+			}, 3000);
+		}
+	</script>
+</head>
+
+<body>
+	<main class="main-container">
+		<header class="header">
+			<div class="flex-hz">
+				<button class="btn btn-icon btn-menu" onclick="openMobileSidebar()">
+					<i class="fa fa-bars fa-lg" aria-hidden="true"></i>
+				</button>
+				<a class="flex-hz link-no-style" href="../index.html">
+					<div class="logo-container">
+						<img class="img-round" src="./logo.png" />
+					</div>
+					<div class="brand-name typo-label">Vercel-UI</div>
+				</a>
+			</div>
+			<div class="flex-hz">
+				<a class="btn btn-icon" href="https://github.com/nikhiljugale007/Vercel-UI" target="_blank">
+					<i class="fa fa-github fa-2x" aria-hidden="true"></i>
+				</a>
+
+				<button class="btn btn-icon" onclick="changeTheme()">
+					<i class="fa fa-adjust fa-2x" aria-hidden="true"></i>
+				</button>
+			</div>
+		</header>
+		<div class="sidebar">
+			<div class="drawer">
+				<div class="drawer-header">
+					<h4 class="typo-label">Getting Started</h4>
+				</div>
+				<div class="drawer-body">
+					<a class="drawer-item link-no-style" href="./installation.html">
+						<p>Installation</p>
 					</a>
 				</div>
-				<div class="flex-hz">
-					<a
-						class="btn btn-icon"
-						href="https://github.com/nikhiljugale007/Vercel-UI"
-						target="_blank"
-					>
-						<i class="fa fa-github fa-2x" aria-hidden="true"></i>
+				<div class="drawer-header">
+					<h4 class="typo-label">Components</h4>
+				</div>
+				<div class="drawer-body">
+					<a class="drawer-item link-no-style" href="./alert.html">
+						<p>Alert</p>
 					</a>
+					<a class="drawer-item link-no-style" href="./avatar.html">
+						<p>Avatar</p>
+					</a>
+					<a class="drawer-item link-no-style" href="./badge.html">
+						<p>Badge</p>
+					</a>
+					<a class="drawer-item link-no-style" href="./button.html">
+						<p>Button</p>
+					</a>
+					<a class="drawer-item link-no-style" href="./cards.html">
+						<p>Card</p>
+					</a>
+					<a class="drawer-item link-no-style" href="./grid.html">
+						<p>Grid</p>
+					</a>
+					<a class="drawer-item link-no-style" href="./images.html">
+						<p>Image</p>
+					</a>
+					<a class="drawer-item link-no-style" href="./input.html">
+						<p>Input</p>
+					</a>
+					<a class="drawer-item link-no-style" href="./list.html">
+						<p>List</p>
+					</a>
+					<a class="drawer-item link-no-style" href="./modal.html">
+						<p>Modal</p>
+					</a>
+					<a class="drawer-item link-no-style" href="./navigation.html">
+						<p>Navigation</p>
+					</a>
+					<a class="drawer-item link-no-style" href="./rating.html">
+						<p>Rating</p>
+					</a>
+					<a class="drawer-item link-no-style" href="./slider.html">
+						<p>slider</p>
+					</a>
+					<a class="drawer-item link-no-style" href="./snackbar.html">
+						<p>Snackbar</p>
+					</a>
+					<a class="drawer-item link-no-style" href="./typography.html">
+						<p>Typography</p>
+					</a>
+				</div>
+			</div>
+		</div>
 
-					<button class="btn btn-icon" onclick="changeTheme()">
-						<i class="fa fa-adjust fa-2x" aria-hidden="true"></i>
+		<div class="mobile-sidebar" id="mobile-sidebar">
+			<div class="drawer">
+				<div class="drawer-header">
+					<h4 class="typo-label">Getting Started</h4>
+					<button class="btn btn-icon" onclick="closeMobileSidebar()">
+						<i class="fa fa-times fa-lg" aria-hidden="true"></i>
 					</button>
 				</div>
-			</header>
-			<div class="sidebar">
-				<div class="drawer">
-					<div class="drawer-header">
-						<h4 class="typo-label">Getting Started</h4>
-					</div>
-					<div class="drawer-body">
-						<a class="drawer-item link-no-style" href="./installation.html">
-							<p>Installation</p>
-						</a>
-					</div>
-					<div class="drawer-header">
-						<h4 class="typo-label">Components</h4>
-					</div>
-					<div class="drawer-body">
-						<a class="drawer-item link-no-style" href="./avatar.html">
-							<p>Avatar</p>
-						</a>
-						<a class="drawer-item link-no-style" href="./alert.html">
-							<p>Alert</p>
-						</a>
-						<a class="drawer-item link-no-style" href="./badge.html">
-							<p>Badge</p>
-						</a>
-						<a class="drawer-item link-no-style" href="./button.html">
-							<p>Button</p>
-						</a>
-						<a class="drawer-item link-no-style" href="./cards.html">
-							<p>Card</p>
-						</a>
-						<a class="drawer-item link-no-style" href="./images.html">
-							<p>Image</p>
-						</a>
-						<a class="drawer-item link-no-style" href="./input.html">
-							<p>Input</p>
-						</a>
-						<a class="drawer-item link-no-style" href="./typography.html">
-							<p>Typography</p>
-						</a>
-						<a class="drawer-item link-no-style" href="./modal.html">
-							<p>Modal</p>
-						</a>
-						<a class="drawer-item link-no-style" href="./list.html">
-							<p>List</p>
-						</a>
-						<a class="drawer-item link-no-style" href="./rating.html">
-							<p>Rating</p>
-						</a>
-						<a class="drawer-item link-no-style active" href="./snackbar.html">
-							<p>Snackbar</p>
-						</a>
-						<a class="drawer-item link-no-style" href="./grid.html">
-							<p>Grid</p>
-						</a>
-						<a class="drawer-item link-no-style" href="./navigation.html">
-							<p>Navigation</p>
-						</a>
-
-						<a class="drawer-item link-no-style" href="./slider.html">
-							<p>slider</p>
-						</a>
-					</div>
+				<div class="drawer-body">
+					<a class="drawer-item link-no-style" href="./installation.html">
+						<p>Installation</p>
+					</a>
+				</div>
+				<div class="drawer-header">
+					<h4 class="typo-label">Components</h4>
+				</div>
+				<div class="drawer-body">
+					<a class="drawer-item link-no-style" href="./alert.html">
+						<p>Alert</p>
+					</a>
+					<a class="drawer-item link-no-style" href="./avatar.html">
+						<p>Avatar</p>
+					</a>
+					<a class="drawer-item link-no-style" href="./badge.html">
+						<p>Badge</p>
+					</a>
+					<a class="drawer-item link-no-style" href="./button.html">
+						<p>Button</p>
+					</a>
+					<a class="drawer-item link-no-style" href="./cards.html">
+						<p>Card</p>
+					</a>
+					<a class="drawer-item link-no-style" href="./grid.html">
+						<p>Grid</p>
+					</a>
+					<a class="drawer-item link-no-style" href="./images.html">
+						<p>Image</p>
+					</a>
+					<a class="drawer-item link-no-style" href="./input.html">
+						<p>Input</p>
+					</a>
+					<a class="drawer-item link-no-style" href="./list.html">
+						<p>List</p>
+					</a>
+					<a class="drawer-item link-no-style" href="./modal.html">
+						<p>Modal</p>
+					</a>
+					<a class="drawer-item link-no-style" href="./navigation.html">
+						<p>Navigation</p>
+					</a>
+					<a class="drawer-item link-no-style" href="./rating.html">
+						<p>Rating</p>
+					</a>
+					<a class="drawer-item link-no-style" href="./slider.html">
+						<p>slider</p>
+					</a>
+					<a class="drawer-item link-no-style" href="./snackbar.html">
+						<p>Snackbar</p>
+					</a>
+					<a class="drawer-item link-no-style" href="./typography.html">
+						<p>Typography</p>
+					</a>
 				</div>
 			</div>
-
-			<div class="mobile-sidebar" id="mobile-sidebar">
-				<div class="drawer">
-					<div class="drawer-header">
-						<h4 class="typo-label">Getting Started</h4>
-						<button class="btn btn-icon" onclick="closeMobileSidebar()">
-							<i class="fa fa-times fa-lg" aria-hidden="true"></i>
-						</button>
-					</div>
-					<div class="drawer-body">
-						<a class="drawer-item link-no-style" href="./installation.html">
-							<p>Installation</p>
-						</a>
-					</div>
-					<div class="drawer-header">
-						<h4 class="typo-label">Components</h4>
-					</div>
-					<div class="drawer-body">
-						<a class="drawer-item link-no-style" href="./avatar.html">
-							<p>Avatar</p>
-						</a>
-						<a class="drawer-item link-no-style" href="./alert.html">
-							<p>Alert</p>
-						</a>
-						<a class="drawer-item link-no-style" href="./badge.html">
-							<p>Badge</p>
-						</a>
-						<a class="drawer-item link-no-style" href="./button.html">
-							<p>Button</p>
-						</a>
-						<a class="drawer-item link-no-style" href="./cards.html">
-							<p>Card</p>
-						</a>
-						<a class="drawer-item link-no-style" href="./images.html">
-							<p>Image</p>
-						</a>
-						<a class="drawer-item link-no-style" href="./input.html">
-							<p>Input</p>
-						</a>
-						<a class="drawer-item link-no-style" href="./typography.html">
-							<p>Typography</p>
-						</a>
-						<a class="drawer-item link-no-style" href="./modal.html">
-							<p>Modal</p>
-						</a>
-						<a class="drawer-item link-no-style" href="./list.html">
-							<p>List</p>
-						</a>
-						<a class="drawer-item link-no-style" href="./rating.html">
-							<p>Rating</p>
-						</a>
-						<a class="drawer-item link-no-style active" href="./snackbar.html">
-							<p>Snackbar</p>
-						</a>
-						<a class="drawer-item link-no-style" href="./grid.html">
-							<p>Grid</p>
-						</a>
-						<a class="drawer-item link-no-style" href="./navigation.html">
-							<p>Navigation</p>
-						</a>
-						<a class="drawer-item link-no-style" href="./slider.html">
-							<p>slider</p>
-						</a>
+		</div>
+		<div class="main-content">
+			<div class="component-container">
+				<div class="component-intro">
+					<div class="title">Snackbar / Toast</div>
+					<div class="sub-title">
+						This component can be used for toast or snackbar component. Toast
+						is mostly used to show feedback message. Snackbar is to used show
+						message that need user action .
 					</div>
 				</div>
-			</div>
-			<div class="main-content">
-				<div class="component-container">
-					<div class="component-intro">
-						<div class="title">Snackbar / Toast</div>
-						<div class="sub-title">
-							This component can be used for toast or snackbar component. Toast
-							is mostly used to show feedback message. Snackbar is to used show
-							message that need user action .
+				<div class="component-example">
+					<div class="title">Example</div>
+					<div class="sub-title"></div>
+
+					<div class="component-display-container">
+						<div class="snackbar snackbar-primary">
+							This is primary
+							<button class="snackbar-action">
+								<i class="fa fa-times fa-lg" aria-hidden="true"></i>
+							</button>
+						</div>
+						<div class="snackbar snackbar-secondary">
+							This is secondary alert
+							<button class="snackbar-action">
+								<i class="fa fa-times fa-lg" aria-hidden="true"></i>
+							</button>
+						</div>
+						<div class="snackbar snackbar-danger">
+							Can't send photo .
+							<button class="snackbar-action">
+								<i class="fa fa-times fa-lg" aria-hidden="true"></i>
+							</button>
+						</div>
+						<div class="snackbar snackbar-success">
+							Photo sent successfully
+							<button class="snackbar-action">
+								<i class="fa fa-times fa-lg" aria-hidden="true"></i>
+							</button>
 						</div>
 					</div>
-					<div class="component-example">
-						<div class="title">Example</div>
-						<div class="sub-title"></div>
-
-						<div class="component-display-container">
-							<div class="snackbar snackbar-primary">
-								This is primary
-								<button class="snackbar-action">
-									<i class="fa fa-times fa-lg" aria-hidden="true"></i>
-								</button>
-							</div>
-							<div class="snackbar snackbar-secondary">
-								This is secondary alert
-								<button class="snackbar-action">
-									<i class="fa fa-times fa-lg" aria-hidden="true"></i>
-								</button>
-							</div>
-							<div class="snackbar snackbar-danger">
-								Can't send photo .
-								<button class="snackbar-action">
-									<i class="fa fa-times fa-lg" aria-hidden="true"></i>
-								</button>
-							</div>
-							<div class="snackbar snackbar-success">
-								Photo sent successfully
-								<button class="snackbar-action">
-									<i class="fa fa-times fa-lg" aria-hidden="true"></i>
-								</button>
-							</div>
-						</div>
-						<div class="code-snippet-display">
-							<code>
+					<div class="code-snippet-display">
+						<code>
 								<iframe
 									src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=solarized+dark&wt=none&l=auto&width=680&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=%253Cdiv%2520class%253D%2522snackbar%2520snackbar-primary%2522%253E%250A%2520%2520This%2520is%2520primary%250A%2520%2520%253Cbutton%2520class%253D%2522snackbar-action%2522%253E%250A%2520%2520%2520%2520%2520%2520%253Ci%2520class%253D%2522fa%2520fa-times%2520fa-lg%2522%2520aria-hidden%253D%2522true%2522%253E%253C%252Fi%253E%250A%2520%2520%253C%252Fbutton%253E%250A%253C%252Fdiv%253E%250A%253Cdiv%2520class%253D%2522snackbar%2520snackbar-secondary%2522%253E%250A%2520%2520This%2520is%2520secondary%2520alert%250A%2520%2520%253Cbutton%2520class%253D%2522snackbar-action%2522%253E%250A%2520%2520%2520%2520%2520%2520%253Ci%2520class%253D%2522fa%2520fa-times%2520fa-lg%2522%2520aria-hidden%253D%2522true%2522%253E%253C%252Fi%253E%250A%2520%2520%253C%252Fbutton%253E%250A%253C%252Fdiv%253E%250A%253Cdiv%2520class%253D%2522snackbar%2520snackbar-danger%2522%253E%250A%2520%2520Can%27t%2520send%2520photo%2520.%250A%2520%2520%253Cbutton%2520class%253D%2522snackbar-action%2522%253E%250A%2520%2520%2520%2520%2520%2520%253Ci%2520class%253D%2522fa%2520fa-times%2520fa-lg%2522%2520aria-hidden%253D%2522true%2522%253E%253C%252Fi%253E%250A%2520%2520%253C%252Fbutton%253E%250A%253C%252Fdiv%253E%250A%253Cdiv%2520class%253D%2522snackbar%2520snackbar-success%2522%253E%250A%2520%2520Photo%2520sent%2520successfully%250A%2520%2520%253Cbutton%2520class%253D%2522snackbar-action%2522%253E%250A%2520%2520%2520%2520%2520%2520%253Ci%2520class%253D%2522fa%2520fa-times%2520fa-lg%2522%2520aria-hidden%253D%2522true%2522%253E%253C%252Fi%253E%250A%2520%2520%253C%252Fbutton%253E%250A%253C%252Fdiv%253E"
 									sandbox="allow-scripts allow-same-origin"
 								>
 								</iframe>
 							</code>
-						</div>
-						<div class="component-display-container">
-							<button class="btn btn-primary" onclick="openLeftSnackbar()">
-								Left Demo
-							</button>
-							<button class="btn btn-primary" onclick="openCenterSnackbar()">
-								Center Demo
-							</button>
-							<button class="btn btn-primary" onclick="openRightSnackbar()">
-								Right Demo
-							</button>
+					</div>
+					<div class="component-display-container">
+						<button class="btn btn-primary" onclick="openLeftSnackbar()">
+							Left Demo
+						</button>
+						<button class="btn btn-primary" onclick="openCenterSnackbar()">
+							Center Demo
+						</button>
+						<button class="btn btn-primary" onclick="openRightSnackbar()">
+							Right Demo
+						</button>
 
-							<div
-								class="snackbar snackbar-primary snackbar-left hide-snackbar"
-								id="leftsnackbar"
-							>
-								This is primary
-								<button class="snackbar-action">
-									<i class="fa fa-times fa-lg" aria-hidden="true"></i>
-								</button>
-							</div>
-							<div
-								class="snackbar snackbar-success snackbar-center hide-snackbar"
-								id="centersnackbar"
-							>
-								Photo sent successfully
-								<button class="snackbar-action">
-									<i class="fa fa-times fa-lg" aria-hidden="true"></i>
-								</button>
-							</div>
-							<div
-								class="snackbar snackbar-danger snackbar-right hide-snackbar"
-								id="rightsnackbar"
-							>
-								Can't send photo .
-								<button class="snackbar-action">
-									<i class="fa fa-times fa-lg" aria-hidden="true"></i>
-								</button>
-							</div>
+						<div class="snackbar snackbar-primary snackbar-left hide-snackbar"
+							id="leftsnackbar">
+							This is primary
+							<button class="snackbar-action">
+								<i class="fa fa-times fa-lg" aria-hidden="true"></i>
+							</button>
 						</div>
-						<div class="code-snippet-display">
-							<code>
+						<div class="snackbar snackbar-success snackbar-center hide-snackbar"
+							id="centersnackbar">
+							Photo sent successfully
+							<button class="snackbar-action">
+								<i class="fa fa-times fa-lg" aria-hidden="true"></i>
+							</button>
+						</div>
+						<div class="snackbar snackbar-danger snackbar-right hide-snackbar"
+							id="rightsnackbar">
+							Can't send photo .
+							<button class="snackbar-action">
+								<i class="fa fa-times fa-lg" aria-hidden="true"></i>
+							</button>
+						</div>
+					</div>
+					<div class="code-snippet-display">
+						<code>
 								<iframe
 									src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=solarized+dark&wt=none&l=auto&width=680&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=%253Cdiv%2520class%253D%2522snackbar%2520snackbar-primary%2520snackbar-left%2520hide-snackbar%2522%2520id%253D%2522leftsnackbar%2522%250A%253E%250A%2520%2520%2520%2520This%2520is%2520primary%250A%2520%2520%2520%2520%253Cbutton%2520class%253D%2522snackbar-action%2522%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%253Ci%2520class%253D%2522fa%2520fa-times%2520fa-lg%2522%2520aria-hidden%253D%2522true%2522%253E%253C%252Fi%253E%250A%2520%2520%2520%2520%253C%252Fbutton%253E%250A%253C%252Fdiv%253E%250A%253Cdiv%2520class%253D%2522snackbar%2520snackbar-success%2520snackbar-center%2520hide-snackbar%2522%2520id%253D%2522centersnackbar%2522%2520%253E%250A%2520%2520%2520%2520Photo%2520sent%2520successfully%250A%2520%2520%2520%2520%253Cbutton%2520class%253D%2522snackbar-action%2522%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%253Ci%2520class%253D%2522fa%2520fa-times%2520fa-lg%2522%2520aria-hidden%253D%2522true%2522%253E%253C%252Fi%253E%250A%2520%2520%2520%2520%253C%252Fbutton%253E%250A%253C%252Fdiv%253E%250A%253Cdiv%2520class%253D%2522snackbar%2520snackbar-danger%2520snackbar-right%2520hide-snackbar%2522%2520id%253D%2522rightsnackbar%2522%2520%253E%250A%2520%2520%2520%2520Can%27t%2520send%2520photo%2520.%250A%2520%2520%2520%2520%253Cbutton%2520class%253D%2522snackbar-action%2522%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%253Ci%2520class%253D%2522fa%2520fa-times%2520fa-lg%2522%2520aria-hidden%253D%2522true%2522%253E%253C%252Fi%253E%250A%2520%2520%2520%2520%253C%252Fbutton%253E%250A%253C%252Fdiv%253E"
 									sandbox="allow-scripts allow-same-origin"
 								>
 								</iframe>
 							</code>
-						</div>
 					</div>
 				</div>
 			</div>
-		</main>
-	</body>
+		</div>
+	</main>
+</body>
+
 </html>
