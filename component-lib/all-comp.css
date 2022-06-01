@@ -1,23 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap");
 
-@import url("./installation.css");
-@import url("./avatar.css");
-@import url("./utilities.css");
-@import url("./alert.css");
-@import url("./badge.css");
-@import url("./button.css");
-@import url("./cards.css");
-@import url("./image.css");
-@import url("./input.css");
-@import url("./list.css");
-@import url("./typography.css");
-@import url("./modal.css");
-@import url("./rating.css");
-@import url("./snackbar.css");
-@import url("./navigation.css");
-@import url("./grid.css");
-@import url("./navigation.css");
-@import url("./slider.css");
+@import url("./installation/installation.css");
+@import url("./avatar/avatar.css");
+@import url("./alert/alert.css");
+@import url("./badge/badge.css");
+@import url("./button/button.css");
+@import url("./cards/cards.css");
+@import url("./image/images.css");
+@import url("./input/input.css");
+@import url("./list/list.css");
+@import url("./typography/typography.css");
+@import url("./modal/modal.css");
+@import url("./rating/rating.css");
+@import url("./snackbar/snackbar.css");
+@import url("./navigation/navigation.css");
+@import url("./grid/grid.css");
+@import url("./navigation/navigation.css");
+@import url("./slider/slider.css");
 
 /* setup */
 
